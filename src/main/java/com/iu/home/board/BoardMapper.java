@@ -12,4 +12,6 @@ public interface BoardMapper {
 	public List<BoardVO> getList(Pager pager) throws Exception;
 	public Long getCount(Pager pager) throws Exception;
 	public BoardVO getDetail(BoardVO boardVO) throws Exception;
+	public int addBoard(BoardVO boardVO) throws Exception;
+	public int addFile(BoardFileVO boardFileVO) throws Exception;
 }

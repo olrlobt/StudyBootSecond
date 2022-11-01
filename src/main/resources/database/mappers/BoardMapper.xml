@@ -25,12 +25,45 @@
 	<select id="getCount" resultType="Long" parameterType="Pager">
 		SELECT COUNT(NUM) FROM BOARD <include refid="search"></include> 
 	</select>
-	<select id="getDetail" parameterType="BoardVO" resultType="BoardVO">
-		SELECT *
-		FROM BOARD
-		WHERE NUM=#{num}			 
+	<select id="getDetail" parameterType="BoardVO" resultMap="getDetailResult">
+		SELECT B.*, BF.*
+		FROM BOARD B
+			 LEFT JOIN
+			 BOARDFILE BF
+			 ON B.NUM = BF.BOARDNUM
+		WHERE B.NUM=#{num}					 
 	</select>
-
+	<resultMap type="BoardVO" id="getDetailResult">
+		<id column="num" property="num"/>
+		<result column="title" property="title"/>
+		<result column="writer" property="writer"/>
+		<result column="contents" property="contents"/>
+		<result column="regDate" property="regDate"/>
+		<result column="hit" property="hit"/>
+		<result column="ref" property="ref"/>
+		<result column="step" property="step"/>
+		<result column="depth" property="depth"/>
+		<collection property="boardFileVOs" javaType="List" ofType="BoardFileVO">
+			<id column="fileNum" property="fileNum"/>
+			<result column="fileName" property="fileName" />
+			<result column="oriName" property="oriName"/>
+		</collection>
+	</resultMap>
+	
+	
+	<insert id="addBoard" parameterType="BoardVO" useGeneratedKeys="true" keyProperty="num">
+		
+		insert into Board 
+		values (#{num}, #{title}, #{writer}, #{contents}, 0, now(), 0,0,0)
+		<selectKey order="AFTER" keyProperty="num" resultType="Long">
+                  	SELECT MAX(NUM) FROM BOARD
+         </selectKey>
+	</insert>
+	<insert id="addFile" parameterType="BoardFileVO">
+		INSERT INTO BOARDFILE
+		VALUES (NULL, #{fileName}, #{oriName}, #{boardNum})
+	</insert> 
+	
 	<!-- <select id="getDetailFile" parameterType="QnaFileVO" resultType="QnaFileVO">
 		SELECT * FROM QNAFILES WHERE FILENUM=#{fileNum}
 	</select>

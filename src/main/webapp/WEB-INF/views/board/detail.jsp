@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 	<c:import url="../temp/boot.jsp"></c:import>
+	<link href="/css/board.css" rel="stylesheet">
 </head>
 <body>
 
@@ -37,7 +38,12 @@
 						<div class="board-contents">
 						     ${list.contents }
 						</div>
-					 
+					 	<c:if test="${not empty list.boardFileVOs }">
+						      	<div  class="board-filetitle">💾첨부 파일</div>
+							      <c:forEach items="${list.boardFileVOs }" var="file">
+										<a href="/fileDown/board?fileNum=${file.fileNum}">${file.oriName}</a>
+							      </c:forEach>
+						      </c:if>
 					</div>
 				</div>
 			</div>

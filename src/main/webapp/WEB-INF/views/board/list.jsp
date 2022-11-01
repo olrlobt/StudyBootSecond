@@ -7,11 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 	<c:import url="../temp/boot.jsp"></c:import>
+	<link href="/css/board.css" rel="stylesheet">
 </head>
 <body>
 
+
+<div class = "boardList col-lg-7" style="min-width: 700px; margin: auto; margin-top: 100px;">
 <h1> 리스트 다아아아아앙</h1>
-<div class = "boardList col-lg-7">
 <table class="table table-hover">
 				  <thead>
 				    <tr>
@@ -67,7 +69,7 @@
 				  	</c:choose>
 				  </ul>
 				</nav>
-				</div>
+				
 				
 				<div >
 				
@@ -90,8 +92,12 @@
 					  <div class="col-12">
 					    <button type="submit" class="boardBlueBtn">검색</button>
 					  </div>
+					  
 				</form>
+						<div class="col-12 boardBlueBtn" style="color: white;" >
+					    <a href="/board/add" class="" style="color: white; ">글쓰기</a>
+					  </div>
 				</div>
-				
+				</div>
 </body>
 </html>

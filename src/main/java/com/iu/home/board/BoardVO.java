@@ -20,5 +20,10 @@ public class BoardVO {
 	private Long ref;
 	private Long step;
 	private Long depth;
+	private List<BoardFileVO> boardFileVOs;
+	
+	private MultipartFile [] files;
+	
+	
 
 }

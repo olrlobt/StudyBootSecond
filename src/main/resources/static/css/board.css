@@ -1,0 +1,206 @@
+.hideBoardFile{
+
+    display: none !important;
+
+
+}
+
+
+#file1{
+
+    display: none;
+
+}
+
+section{
+	min-height: 93%;
+	/* background-color: #f7f9fa; */
+	
+}
+
+#boardSection{
+	border : 1px solid #dfe2e6;
+	border-radius: 1%;
+	min-width : 400px;
+	max-width: 830px;
+	min-height : 600px;
+	background-color: white;
+	margin: auto auto 0 auto;
+	padding: 40px;
+}
+#mainTable{
+	
+	width : 90%;
+	margin: 15px auto;
+
+}
+
+.board-writerSection{
+
+	display: inline-flex;
+
+}
+
+.board-img{
+
+	width: 50px;
+
+}
+
+.board-imgDiv{
+
+	width: 50px;
+    height: 50px; 
+    border-radius: 70%;
+    border : 1px solid #c8c9ca;
+    overflow: hidden;
+   margin-right: 15px;
+
+}
+.board-userId{
+	font-size: 20px;
+
+}
+.board-info{
+
+	color: #c8c9ca;
+	font-size: 15px;
+
+}
+.board-title{
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 15px;
+}
+.board-filetitle{
+
+	margin-top: 30px;
+	color: #c8c9ca;
+
+}
+.board-contents{
+
+	min-height: 350px;
+	height: auto;
+
+}
+.board-url{
+
+	font-size: 15px;
+	color: #61b6dc;
+}
+
+.noQnaAnswer{
+
+	display: flex;
+	justify-items: center;
+	margin: 0 auto ;
+	color: #999;
+	width: 20%;
+
+
+}
+.noQnaAnswerComment{
+	margin: 0 auto ;
+	width:auto;
+	min-width: 250px;
+}
+.boardList{
+
+    height: auto;
+    min-height: 400px;
+	
+	
+
+
+}
+
+.boardBlueBtn{
+	background-color: #61b6dc;
+	width: 90px;
+	border-radius: 5px;
+	border: 0;
+	color: #f7f9fa;
+	height: 38px;
+}
+.addboard-title{
+
+	font-weight: 500;
+	font-size: 25px;
+	margin-left: 20px;
+}
+
+.floatRight{
+
+	float: right;
+
+}
+
+.boardAddBtn{
+	margin-top: 15px;
+
+	display: flex;
+	float: right;
+	justify-content: center;
+	align-items: center;
+
+
+
+}
+
+#boardsearch{
+	
+	display: flex;
+
+	justify-content: center;
+}
+
+.boardTitle{
+
+	font-size: 24px;
+	border: 600;
+	display: flex;
+	align-items: center;
+
+
+
+}
+.boardsubTitle{
+	font-size: 18px;
+	border: 600;
+	color: #61b6dc;
+}
+.questionMark{
+	margin-right: 20px;
+	width: 50px;
+    height: 50px;
+	font-weight: 600;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgb(53, 197, 240);
+    border: 1px solid rgb(234, 237, 239);
+    box-shadow: rgb(63 71 77 / 5%) 0px 2px 6px;
+
+}
+
+.boardDetailbody{
+
+	max-width: 830px;
+	margin: 0 auto;
+
+
+}
+
+.boardBtnDiv{
+	display: flex;
+	font-weight: 600;
+	margin: 10px 0 50px 0;
+	justify-content: flex-end;
+
+}

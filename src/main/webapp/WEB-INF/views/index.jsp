@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>index 다다다다다다ㅏ다</h1>
+	<h1><a href="/board/list"> index 다다다다다다ㅏ다 </a></h1>
 </body>
 </html>
