@@ -26,6 +26,14 @@ public class BoardService {
 	@Autowired
 	private FileManager fileManger;
 	
+	
+	public BoardFileVO getFileDetail(BoardFileVO boardFileVO) throws Exception{
+		
+		
+		return boardMapper.getFileDetail(boardFileVO);
+	}
+	
+	
 	public List<BoardVO> getList(Pager pager) throws Exception{
 		
 		pager.getRowNum();

@@ -94,7 +94,7 @@
 	<script src="/js/summernote/lang/summernote-ko-KR.js"></script>
 	<script src="/js/board.js"></script>
    	<script type="text/javascript">
-   	
+   	verify();
    		board();
    		fileJs();
    		$(document).ready(function() {

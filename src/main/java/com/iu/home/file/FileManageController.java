@@ -22,9 +22,8 @@ public class FileManageController {
 	public ModelAndView fileDown(@PathVariable(name= "p")String path, BoardFileVO boardFileVO) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
-		//boardService
-		boardFileVO.setFileName("02120c38-b3eb-471e-98e8-1bf321162d7f_interSample.jpg");
-		boardFileVO.setOriName("interSample.jpg");
+		boardFileVO = boardService.getFileDetail(boardFileVO);
+		
 		mv.addObject("fileVO",boardFileVO);
 		mv.addObject("path",path);
 		mv.setViewName("fileManager");

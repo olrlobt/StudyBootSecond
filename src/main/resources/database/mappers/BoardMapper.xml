@@ -63,6 +63,10 @@
 		INSERT INTO BOARDFILE
 		VALUES (NULL, #{fileName}, #{oriName}, #{boardNum})
 	</insert> 
+	<select id="getFileDetail" parameterType="BoardFileVO" resultType="BoardFileVO">
+		SELECT * FROM BOARDFILE WHERE FILENUM=#{fileNum}
+	</select>
+	
 	
 	<!-- <select id="getDetailFile" parameterType="QnaFileVO" resultType="QnaFileVO">
 		SELECT * FROM QNAFILES WHERE FILENUM=#{fileNum}

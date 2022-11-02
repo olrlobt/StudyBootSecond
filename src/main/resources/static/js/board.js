@@ -8,90 +8,99 @@ function board() {
     const boardBtn = document.querySelector("#boardBtn");
     const boardForm = document.querySelector("#boardForm");
     const fileInputDiv = document.querySelector("#fileInputDiv");
-
+    const title = document.querySelector("#title");
+    const writer = document.querySelector("#userId");
+    const summernote = document.querySelector("#summernote");
 
     boardBtn.addEventListener("click",function(){
-
-
-        Swal.fire({
-            title: "게시하시겠습니까?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: '#61b6dc',
-            
-            confirmButtonText: '수정',
-            cancelButtonText: '취소',
-            reverseButtons: true
-        } ).then((result) => {
-            if (result.isConfirmed) {
-
-
-                if(boardBtn.title == "update"){
-
-            
-                    boardForm.action = "./update";
         
-                    const boardFile = document.getElementsByClassName("boardFile");
-                    const boardNum = document.querySelector("#boardNum");
-                   
-                    let noNumber = 0;
         
-                    console.log("title = " +fileInputDiv.title);
-                    console.log("title = " +boardFile.length);
-                    for(let i = 1 ; i <= fileInputDiv.title ; i ++ ){
-                        let check = false;
-                        for(boF of boardFile){
-                            if(boF.title == i){
-                                check = true;
-                                // 있다.
-                                break;
-                            }else{
-                                // i 가 없는 번호
-                               
-                            }
-                        }
         
-                        if(!check){
-                            noNumber += 1;
-                        }
-                        
-                        console.log("noNum" + noNumber);
-        
-                    }
-                    console.log("noNum" + noNumber);
-                    let input = document.createElement("input");
-                    let inputArr = document.createAttribute("type");
-                    inputArr.value = "hidden";
-                    input.setAttributeNode(inputArr);
-                    inputArr = document.createAttribute("name");
-                    inputArr.value = "number";
-                    input.setAttributeNode(inputArr);
-        
-                    inputArr = document.createAttribute("value");
-                    inputArr.value = noNumber;
-                    input.setAttributeNode(inputArr);
-                    fileInputDiv.append(input);
-        
-                }
-               boardForm.submit();
+        if(title.value.length == 0 || writer.value.length == 0 || summernote.value.length == 0){
 
-
-
-
-
-
-
-
-
-
-
-
-
+            Swal.fire({
+                title: "빈 칸이 있잖소",
+                icon: "error",
+                showCancelButton: true,
+                showConfirmButton: false,
+                CancelButtonColor: '#61b6dc',
                 
+                cancelButtonText: '확인',
+                reverseButtons: true
+            } )
+
+        }else{
+
+            Swal.fire({
+                title: "게시하시겠습니까?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: '#61b6dc',
+                
+                confirmButtonText: '확인',
+                cancelButtonText: '취소',
+                reverseButtons: true
+            } ).then((result) => {
+                if (result.isConfirmed) {
+    
+    
+                    if(boardBtn.title == "update"){
+                        boardForm.action = "./update";
+            
+                        const boardFile = document.getElementsByClassName("boardFile");
+                        const boardNum = document.querySelector("#boardNum");
+                       
+                        let noNumber = 0;
+            
+                        console.log("title = " +fileInputDiv.title);
+                        console.log("title = " +boardFile.length);
+                        for(let i = 1 ; i <= fileInputDiv.title ; i ++ ){
+                            let check = false;
+                            for(boF of boardFile){
+                                if(boF.title == i){
+                                    check = true;
+                                    // 있다.
+                                    break;
+                                }else{
+                                    // i 가 없는 번호
+                                   
+                                }
+                            }
+            
+                            if(!check){
+                                noNumber += 1;
+                            }
+                            
+                            console.log("noNum" + noNumber);
+            
+                        }
+                        console.log("noNum" + noNumber);
+                        let input = document.createElement("input");
+                        let inputArr = document.createAttribute("type");
+                        inputArr.value = "hidden";
+                        input.setAttributeNode(inputArr);
+                        inputArr = document.createAttribute("name");
+                        inputArr.value = "number";
+                        input.setAttributeNode(inputArr);
+            
+                        inputArr = document.createAttribute("value");
+                        inputArr.value = noNumber;
+                        input.setAttributeNode(inputArr);
+                        fileInputDiv.append(input);
+            
+                    }
+                   boardForm.submit();
+                }
                
-            }
-           
-        })
+            })
+
+
+        }
+
+
+
+
+        
 
         
 
@@ -115,7 +124,7 @@ function answer(){
             showCancelButton: true,
             confirmButtonColor: '#61b6dc',
             
-            confirmButtonText: '수정',
+            confirmButtonText: '확인',
             cancelButtonText: '취소',
             reverseButtons: true
         } ).then((result) => {
@@ -388,6 +397,16 @@ function board2() {
 
 
 
+
+
+
+
+}
+
+
+function verify(){
+
+    
 
 
 

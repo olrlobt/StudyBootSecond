@@ -14,4 +14,5 @@ public interface BoardMapper {
 	public BoardVO getDetail(BoardVO boardVO) throws Exception;
 	public int addBoard(BoardVO boardVO) throws Exception;
 	public int addFile(BoardFileVO boardFileVO) throws Exception;
+	public BoardFileVO getFileDetail(BoardFileVO boardFileVO) throws Exception;
 }
